@@ -1,0 +1,35 @@
+.update{
+    margin-top: 50px;
+    width: 50%;
+    margin-left: 190px;
+    border-radius: 10px;
+}
+
+
+
+.button{
+    margin-top:20px
+}
+
+.edit{
+    margin-top: 15px;
+    text-align: center;
+    color: rgb(26, 169, 216);
+    
+}
+
+.heading{
+    color:brown;
+    font-size:medium;
+    font-family:cursive;
+}
+
+.heading2{
+    color: rgb(26, 169, 216);
+    font-size:medium;
+    font-family:cursive;
+}
+
+.form-group{
+    margin-top: 15px;
+}

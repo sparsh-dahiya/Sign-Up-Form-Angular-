@@ -1,0 +1,32 @@
+
+<div class="data">
+    <h1 class="addDetail">Keep the record of all your customers detail. </h1>
+    <div *ngIf="!hide"   class="alert alert-success">
+    {{sucessMssg}}
+    </div>
+
+    <form #detailForm="ngForm" (ngSubmit)=" addDetail();detailForm.reset()">
+        <h1 class="addDetail">Enter the details in the below mentioned form</h1>
+        <div class="form-group">
+            <input required [(ngModel)]="data.name" class="form-control" type="text" name="name" placeholder="enter your name">
+        </div>
+        <div class="form-group">
+            <input #number="ngModel"  required minlength="10" maxlength="10"   [(ngModel)]="data.phone" class="form-control" type="text" name="number" placeholder="enter your phone number">
+            <div  class="alert alert-danger" *ngIf="number.errors?.['minlength']">
+                <p>enter a valid phone number</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <input #emails="ngModel"  email required [(ngModel)]="data.email" class="form-control" type="text" name="email" placeholder="enter your email">
+            <div  class="alert alert-danger" *ngIf="emails.errors?.['email']">
+                <p>enter a valid email address</p>
+            </div>
+        </div>
+        <div class="form-group" class="button">
+            <button class="btn btn-primary" type="submit" [disabled]="detailForm.invalid" >Submit</button>
+        </div>
+        
+    </form>
+        
+</div>

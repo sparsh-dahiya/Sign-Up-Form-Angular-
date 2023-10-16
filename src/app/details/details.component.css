@@ -1,0 +1,23 @@
+.data{
+    margin-top: 80px;
+    width:50%;
+    margin-left: 200px;
+}
+
+
+
+.addDetail{
+    color:rgb(48, 188, 235);
+    text-align: center;
+    font-size:medium;
+    font-family:cursive;
+
+}
+
+.button{
+    margin-top:30px
+}
+
+.form-group{
+    margin-top: 15px;
+}

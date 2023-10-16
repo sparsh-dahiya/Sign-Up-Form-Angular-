@@ -1,0 +1,20 @@
+.welcome{
+    text-align: center;
+    margin-top:190px;
+    width:70%;
+    margin-left: 160px;
+    color:rgb(36, 165, 207);
+    font-size:large;
+    line-height: 35px;
+    font-family:cursive;
+    
+}
+.dot{
+    color:blue;
+    font-size: xx-large;
+}
+
+.Heading{
+    font-family:cursive;
+    font-size: xx-large;
+}

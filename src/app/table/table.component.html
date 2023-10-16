@@ -1,0 +1,51 @@
+
+<div class=table>
+  <p>Below mentioned table consist of all the records which has been submitted till now. On the bottom right of the table you can use how many record you want to see on a single page and can move to next page accordingly.
+    By clicking on the Id title and Name title on the top of the table you can arrange the table in ascending or descinding order acordingly. 
+  </p>
+</div>
+
+
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      <!-- <td mat-cell *ngFor="let item of details">{{details.name}}</td> -->
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>phone</th>
+      <td mat-cell *matCellDef="let row">{{row.phone}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>email</th>
+      <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+
+    
+   
+
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>

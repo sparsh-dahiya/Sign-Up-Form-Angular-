@@ -1,0 +1,63 @@
+<div class="update">
+    <h1 class="heading">Enter the Id of the Detail which you want to remove</h1>
+    <form  #deleteForm="ngForm" name="deleteForm">
+    
+        <div *ngIf="!hide" class="alert alert-danger">
+            {{sucessMssg}}
+        </div>
+        <div class="form-group">
+            <input required name="inputValue" class="form-control" type="text" id="remove" placeholder="enter id of the detail you want to remove">
+        </div>
+    
+        <div class="form-group" class="button" >
+            <button class="btn btn-danger" [disabled]="!deleteForm.valid" id="delete" type="submit"  (click)="remove()" >Remove</button>
+        </div>
+    
+    </form>
+    
+</div>
+
+
+
+
+
+
+<div class="update">
+    <h1 class="heading2">Enter the ID of the detail which you want to edit</h1>
+
+
+    <form #detailsForm="ngForm" (ngSubmit)=" updateDetail();detailsForm.reset()">
+        <div *ngIf="!hideUpdate" class="alert alert-success">
+            {{editMssg}}
+        </div>
+        <div class="form-group">
+            <input class="form-control" required [(ngModel)]="data.id" name="id" type="text" id="sparsh"
+                placeholder="enter id of the detail you wish to update">
+        </div>
+
+        <p class="edit">In below mentioned form change the details of the Id which you mentioned above</p>
+        <div class="form-group">
+            <input required [(ngModel)]="data.name" class="form-control" type="text" name="name"
+                placeholder="enter new name ">
+        </div>
+        <div class="form-group">
+            <input #number="ngModel" required minlength="10" maxlength="10" [(ngModel)]="data.phone"
+                class="form-control" type="text" name="number" placeholder="enter new phone number">
+            <div class="alert alert-danger" *ngIf="number.errors?.['minlength']">
+                <p>enter a valid phone number</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input #emails="ngModel" email required [(ngModel)]="data.email" class="form-control" type="text"
+                name="email" placeholder="enter new email">
+            <div class="alert alert-danger" *ngIf="emails.errors?.['email']">
+                <p>enter a valid email address</p>
+            </div>
+        </div>
+        <div class="form-group" class="button">
+            <button class="btn btn-primary" type="submit" [disabled]="detailsForm.invalid">Update</button>
+        </div>
+
+    </form>
+</div>

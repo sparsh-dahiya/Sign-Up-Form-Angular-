@@ -1,0 +1,16 @@
+.full-width-table {
+  width: 100%;
+}
+
+.table{
+  text-align: center;
+  width:70%;
+  margin-left:140px;
+  margin-top:50px;
+  color:rgb(34, 165, 209);
+  font-family:cursive;
+  font-size: larger;
+  margin-bottom: 60px;
+}
+
+
